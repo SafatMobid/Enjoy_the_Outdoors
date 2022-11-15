@@ -1,0 +1,17 @@
+.background
+{
+    background-color: rgb(226, 236, 230);
+}
+
+.jumbotron {
+  background-image: url("../Images/Image_Found/Mountain_and_Forest.jpg");
+  background-size: cover;
+  padding: 5em inherit;
+  color:  rgb(221, 238, 228);
+  text-shadow: 1px black;
+}
+
+.navText
+{
+    font-size: 150%;
+}

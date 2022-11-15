@@ -1,0 +1,42 @@
+.background
+{
+    background-color: rgb(226, 236, 230);
+}
+
+.jumbotron {
+  background-image: url("../Images/Image_Found/Mountain_and_Forest.jpg");
+  background-size: cover;
+  padding: 5em inherit;
+  color:  rgb(221, 238, 228);
+  text-shadow: 1px black;
+}
+
+.navText
+{
+    font-size: 150%;
+}
+
+.mainHeading
+{
+    text-align: center;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: 300;
+    font-size: 150%; 
+}
+
+.mainHeading2
+{
+    text-align: center;
+    font-weight: 300;
+    font-size: 150%; 
+}
+
+.textColor
+{
+    text-align: center;
+    font-size: 300%;
+    font-weight: 20;
+    padding-left: 1rem;
+}
