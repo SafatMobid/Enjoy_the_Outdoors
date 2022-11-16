@@ -1,18 +1,3 @@
-const parkTypesArray = [
-    "National Park",
-    "National Monument",
-    "Recreation Area",
-    "Scenic Trail",
-    "Battlefield",
-    "Historic",
-    "Memorial",
-    "Preserve",
-    "Island",
-    "River",
-    "Seashore",
-    "Trail",
-    "Parkway"
-]
 /* May not need these 2 (Check for error in code) */
 //const locationList = document.getElementById("locationList");
 //const parkTypeList = document.getElementById("parkTypeList");
@@ -20,7 +5,7 @@ const parkTypesArray = [
 /* <select class="form-select" aria-label="location" id="locationList" name="location" style="display: none;"></select> */
 /* <select class="form-select" aria-label="parkType" id="parkTypeList" name="parkType" style="display: none;"> </select> */
 //-------------------------------------------------------------------------------------//
-/* ALL CONST LIST VALUE (ACTIVATE THE ONES NEEDED) */
+/* ALL CONST LIST VALUE */
 
 /* NEEDED FOR LOCATION LIST VALUE */
 //const locationOptionList = document.getElementById("locationOptionList")
@@ -32,19 +17,45 @@ const parkTypesArray = [
 //const parkActualList = document.getElementById("parkActualList")
 
 
-
-//NEEDED TO MOVE CODE ONTO 4TH Script FOR WINDOW>ONLOAD TO WORK
-/* window.onload = function()
+window.onload = function()
 {
     parkOptionDropdown();
     locationOptionDropdown();
+    const locationOptionList = document.getElementById("locationOptionList");
+    const parkOptionList = document.getElementById("parkOptionList");
     /* const parkActualList = document.getElementById("parkActualList"); */
-    /* parkOptionList.onchange = parkOptionChange; May not need now*/
-    /* May need for when creating actual park list  */
-//}*/
+    parkOptionList.onchange = parkOptionChange;
+    locationOptionList.onchange = locationOptionChange;
 
-//WORKING
-/* function parkOptionDropdown()
+    
+}
+
+function locationOptionDropdown() /* FOR LOCATION DROPDOWN */
+{
+
+    const locationOptionList = document.getElementById("locationOptionList");
+    let blankLocation = document.createElement("option");
+    blankLocation.value = "locationOption";
+    blankLocation.textContent = "Where do you want to visit?"
+    locationOptionList.appendChild(blankLocation)
+
+/*     
+    for (let option of locationsArray) 
+        {
+            lOption = new Option(option);
+            locationOptionList.appendChild(option); 
+        } 
+    TEST MORE LATER 
+*/ 
+    for (let j = 0; j < locationsArray.length; j++) 
+    {
+        let loption = document.createElement("option");
+        loption.textContent = locationsArray[j];
+        locationOptionList.appendChild(loption);
+    }
+}
+
+function parkOptionDropdown() /* FOR PARK TYPE DROPDOWN */
 {
     //LINE 47 TO 52 WORKS BUT NEEDS TO REPLACE OPTION INSTEAD OF CREATING ONE (PATCH LATER)
     const parkOptionList = document.getElementById("parkOptionList");
@@ -60,11 +71,15 @@ const parkTypesArray = [
         } 
     NOT WORKING TEST MORE LATER
 */ 
-//WORKING 
-/*     for (let i = 0; i < parkTypesArray.length; i++) 
+    for (let i = 0; i < parkTypesArray.length; i++) 
     {
         let option = document.createElement("option");
         option.textContent = parkTypesArray[i];
         parkOptionList.appendChild(option);
-    } */
-//} */
+    }
+}
+
+function parkOptionChange()
+{
+    let parkChoice = document.getElementById("parkOptionList")
+}

@@ -53,11 +53,25 @@
         </div>
       </div>
 
-
-
     </header>
 
     <main>
+                <!-- Create Dropdownlist to have user choose by location -->
+                <select class="form-select" aria-label="locationOptionList" id="locationOptionList" name="locationOptionList">
+                </select>
+
+                <!-- Create Dropdownlist to have user choose by park type -->
+                <select class="form-select" aria-label="parkOptionList" id="parkOptionList" name="parkOptionList">
+                </select>
+
+                <!-- if time create cards that show all options based on user choice -->
+                <!-- Create Dropdownlist to have user choose by park defined by earlier choice -->
+                <select class="form-select" aria-label="parkActual" id="parkActualList" name="park" style="display: none;">
+                    <option value="blankPark">Choose a park</option>
+                </select>
+
+                <!-- Where park info is displayed (Test card if time) -->
+                <p id="parkInfo" class="text-center" style="display: none;"></p>
 
 
     </main>
@@ -67,9 +81,11 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"></script>
 
+    <script src="scripts/nationalParkData.js"></script>
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
-    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/parkFinal.js"></script>
+
   </div>
 </body>
 
