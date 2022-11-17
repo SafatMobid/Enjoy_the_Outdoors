@@ -16,63 +16,81 @@
 
 <body>
   <div class="background">
-    
+
     <header>
-      
+
       <!-- Jumbotron  +  Navbar -->
-      <div class="jumbotron jumbotron-fluid"> <!-- Jumbotron -->
+      <div class="jumbotron jumbotron-fluid">
+        <!-- Jumbotron -->
         <div class="container-fluid" style="padding: 2em;">
           <img class="display-2" src="Images/Image_Found/Backpacker_logo_style_3_transparent.png"
             style="background-color: rgb(21, 56, 30); padding: 5px;">
-          <p class="lead" style="font-size: 250%; -webkit-text-stroke: 1px rgb(118, 146, 130);  font-weight: 400; padding-top: 10px;">Enjoy the outdoors</p>
-            
-          <div> <!-- NavBar -->
-            <nav class="navbar navbar-expand-lg sticky-top shadow-8-strong">
-                <a class="navbar-brand" style="font-size:200%" href="Home.html">Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                  aria-controls="navbarCollapse">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+          <p class="lead"
+            style="font-size: 250%; -webkit-text-stroke: 1px rgb(118, 146, 130);  font-weight: 400; padding-top: 10px;">
+            Enjoy the outdoors</p>
 
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                  <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item ">
-                      <a class="nav-link active navText" href="Park_Search.html">National Parks</a>
-                    </li>
-                    <li class="nav-item ">
-                      <a class="nav-link active navText" href="Mountain_Info.html">National Mountains</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link navText" href="#">Who we are</a>
-                    </li>
-                  </ul>
-                </div>
+          <div>
+            <!-- NavBar -->
+            <nav class="navbar navbar-expand-lg sticky-top shadow-8-strong">
+              <a class="navbar-brand" style="font-size:200%" href="Home.html">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav mr-auto">
+                  <li class="nav-item ">
+                    <a class="nav-link active navText" href="Park_Search.html">National Parks</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link active navText" href="Mountain_Info.html">National Mountains</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link navText" href="#">Who we are</a>
+                  </li>
+                </ul>
+              </div>
             </nav>
           </div>
-          
+
         </div>
       </div>
 
     </header>
 
     <main>
-                <!-- Create Dropdownlist to have user choose by location -->
-                <select class="form-select" aria-label="locationOptionList" id="locationOptionList" name="locationOptionList">
-                </select>
 
-                <!-- Create Dropdownlist to have user choose by park type -->
-                <select class="form-select" aria-label="parkOptionList" id="parkOptionList" name="parkOptionList">
-                </select>
 
-                <!-- if time create cards that show all options based on user choice -->
-                <!-- Create Dropdownlist to have user choose by park defined by earlier choice -->
-                <select class="form-select" aria-label="parkActual" id="parkActualList" name="park" style="display: none;">
-                    <option value="blankPark">Choose a park</option>
-                </select>
 
-                <!-- Where park info is displayed (Test card if time) -->
-                <p id="parkInfo" class="text-center" style="display: none;"></p>
+      <!-- Create Dropdownlist to have user choose by location -->
+      <div id="SelectLocationContainer">
+        <label>Choose where you would like to visit</label>
+        <select class="form-select" aria-label="locationOptionList" id="locationOptionList" name="locationOptionList">
+        </select>
+      </div>
 
+      <!-- Create Dropdownlist to have user choose by park type -->
+      <div id="selectTypeContainer">
+        <label>What kind of park do you want to visit?</label>
+        <select class="form-select" aria-label="parkOptionList" id="parkOptionList" name="parkOptionList">
+        </select>
+      </div>
+      
+      <div id="selectParkContainer">
+        <!-- if time create cards that show all options based on user choice -->
+        <!-- Create Dropdownlist to have user choose by park defined by earlier choice -->
+        <label>Please choose a park!</label>
+        <select class="form-select" aria-label="parkActual" id="parkActualList" name="park">
+          <!-- style="display: none;" -->
+        </select>
+
+      </div>
+
+      <!-- Where park info is displayed (Test card if time) -->
+      <div id="parkInfoContainer">
+
+      </div>
 
     </main>
 

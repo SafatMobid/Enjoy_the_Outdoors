@@ -1,3 +1,57 @@
+    /* var output = ""; */
+    let locationChoice = document.getElementById("locationOptionList").value
+    for (let i = 0; i < nationalParksArray.length; i++) 
+    {
+        if (nationalParksArray[i].State == locationChoice)
+        {
+            return true;
+            /* parkInfo.innerHTML = "Test " + nationalParksArray[i].LocationName */
+
+            /* return  parkInfo.innerHTML = "Test " + nationalParksArray[i].LocationName */
+            /* function returnPark(locationState){ 
+                return parkInfo.innerHTML = "Test " + nationalParksArray[i].LocationName
+            } */
+            
+            /*output += parkInfo.innerHTML = "Test " + nationalParksArray[i].LocationName
+            return output; */
+        }
+        parkInfo.innerHTML = "Test " + nationalParksArray[i].LocationName
+    }
+
+
+    //WORKING
+    function locationOptionChange()
+{
+    const parkInfoContainer = document.getElementById("parkInfoContainer");
+    /* var output = ""; */
+    let locationChoice = document.getElementById("locationOptionList").value
+    for (let i = 0; i < nationalParksArray.length; i++) 
+    {
+        if (nationalParksArray[i].State == locationChoice)
+        {
+            let p = document.createElement("p");
+            p.innerHTML = "Test " + nationalParksArray[i].LocationName
+            parkInfoContainer.appendChild(p)
+
+        }
+        // 
+
+    }
+    
+            /* parkInfo.innerHTML = "Test " + nationalParksArray[i].LocationName */
+
+            /* return  parkInfo.innerHTML = "Test " + nationalParksArray[i].LocationName */
+            /* function returnPark(locationState){ 
+                return parkInfo.innerHTML = "Test " + nationalParksArray[i].LocationName
+            } */
+            
+            /*output += parkInfo.innerHTML = "Test " + nationalParksArray[i].LocationName
+            return output; */
+
+
+ 
+}
+//----------------------------------------------------------------------------------------------------------//
 //Full Code
 /* May not need these 2 (Check for error in code) */
 //const locationList = document.getElementById("locationList");
@@ -21,18 +75,14 @@
 window.onload = function () {
     parkOptionDropdown();
     locationOptionDropdown();
-
-    selectParkContainerHide();
-
-    selectParkContainerShow();
-
     const locationOptionList = document.getElementById("locationOptionList");
     const parkOptionList = document.getElementById("parkOptionList");
-    const parkInfoContainer = document.getElementById("parkInfoContainer");
-    const parkActualList = document.getElementById("parkActualList");
+    const parkInfo = document.getElementById("parkInfo");
+    /* const parkActualList = document.getElementById("parkActualList"); */
     parkOptionList.onchange = parkOptionChange;
     locationOptionList.onchange = locationOptionChange;
-    parkActualList.onchange = parkActualChange;
+    selectParkContainerHide();
+    selectParkContainerShow();
 }
 
 function locationOptionDropdown() /* FOR LOCATION DROPDOWN */ {
@@ -52,8 +102,8 @@ function locationOptionDropdown() /* FOR LOCATION DROPDOWN */ {
         TEST MORE LATER 
     */
     for (let j = 0; j < locationsArray.length; j++) {
-        let loption = new Option(locationsArray[j])
-  
+        let loption = document.createElement("option");
+        loption.textContent = locationsArray[j];
         locationOptionList.appendChild(loption);
     }
 }
@@ -74,8 +124,8 @@ function parkOptionDropdown() /* FOR PARK TYPE DROPDOWN */ {
         NOT WORKING TEST MORE LATER
     */
     for (let i = 0; i < parkTypesArray.length; i++) {
-        let option = new Option(parkTypesArray[i])
-         
+        let option = document.createElement("option");
+        option.textContent = parkTypesArray[i];
         parkOptionList.appendChild(option);
     }
 }
@@ -86,7 +136,7 @@ function parkOptionChange() {  /* LOAD DROPDOWN BASED ON PARK TYPE */
 
 function locationOptionChange() { /* LOAD DROPDOWN BASED ON LOCATION */
     const parkActualList = document.getElementById("parkActualList")
-    parkActualList.length = 0;
+
     let locationChoice = document.getElementById("locationOptionList").value
     let blankPark = document.createElement("option");
     blankPark.value = "blankPark";
@@ -95,29 +145,14 @@ function locationOptionChange() { /* LOAD DROPDOWN BASED ON LOCATION */
     
     for (let i = 0; i < nationalParksArray.length; i++) {
         if (nationalParksArray[i].State == locationChoice) {
-            
-            let option = new Option(nationalParksArray[i].LocationName);
-
+            let option = document.createElement("option");
+            option.textContent = nationalParksArray[i].LocationName;
             parkActualList.appendChild(option);
         }
     }
     
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-//----------------------------------------------------------------------------------------------------------//
-//Testing to hide dropdown when not selected
 function selectParkContainerShow(){
     let selectParkContainer = document.getElementById("selectParkContainer");
     selectParkContainer.style.display = "block";
