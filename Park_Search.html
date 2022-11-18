@@ -61,35 +61,61 @@
 
     <main>
 
+      <!-- Create Radio Button or Check Box -->
 
+      <div class= "form-check">
+        <input class="form-check-input" type="radio" name="searchtype" id="radioLocationBtn" checked>
+        <label class="form-check-label" for="radioLocationBtn">
+          Search By Location
+        </label>
+      </div>
+
+      <div class= "form-check">
+        <input class="form-check-input" type="radio" name="searchtype" id="radioParkTypeBtn" >
+        <label class="form-check-label" for="radioParkTypeBtn">
+          Search By Park Type
+        </label>
+      </div>
 
       <!-- Create Dropdownlist to have user choose by location -->
-      <div id="SelectLocationContainer">
+      <div id="locationContainer">
         <label>Choose where you would like to visit</label>
         <select class="form-select" aria-label="locationOptionList" id="locationOptionList" name="locationOptionList">
         </select>
       </div>
 
       <!-- Create Dropdownlist to have user choose by park type -->
-      <div id="selectTypeContainer">
+      <div id="typeContainer">
         <label>What kind of park do you want to visit?</label>
         <select class="form-select" aria-label="parkOptionList" id="parkOptionList" name="parkOptionList">
         </select>
       </div>
-      
-      <div id="selectParkContainer">
-        <!-- if time create cards that show all options based on user choice -->
+
+      <div id="parkContainer">
         <!-- Create Dropdownlist to have user choose by park defined by earlier choice -->
         <label>Please choose a park!</label>
         <select class="form-select" aria-label="parkActual" id="parkActualList" name="park">
-          <!-- style="display: none;" -->
         </select>
 
       </div>
 
       <!-- Where park info is displayed (Test card if time) -->
+      <div class="container">
+        <div class="row">
       <div id="parkInfoContainer">
-
+<!--         <div class="row card-deck">
+              <div class="col-sm-12 col-lg-8 mb-8">
+                  <div class="card bg-light">
+                      <div class="card-body background">
+                          <h3 class="card-title">Test</h3>
+                          <p class="card-text">Name</p>
+                      </div>
+                      <div class="card-footer background">
+                          <a href="Park_Search.html" class="btn btn-primary">Learn More</a>
+                      </div>
+                  </div> -->
+            </div>
+       </div>
       </div>
 
     </main>

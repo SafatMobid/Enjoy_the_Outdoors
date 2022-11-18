@@ -162,3 +162,106 @@ function selectParkContainerHide(){
     let selectParkContainer = document.getElementById("selectParkContainer");
     selectParkContainer.style.display = "none";
 }
+
+//
+//let parkNameType = nationalParksArray.filter((arrayValue)=> arrayValue.LocationName = typeChoice)
+
+//----------------------------------------------------------------------------------------//
+function locationOptionChange() { /* LOAD DROPDOWN BASED ON LOCATION */
+    const parkActualList = document.getElementById("parkActualList")
+    parkActualList.length = 0;
+    let locationChoice = document.getElementById("locationOptionList").value
+
+    let blankPark = document.createElement("option");
+    blankPark.value = "blankPark";
+    blankPark.textContent = "Choose a park"
+    parkActualList.appendChild(blankPark)
+    
+
+    for (let i = 0; i < nationalParksArray.length; i++) {
+        if (nationalParksArray[i].State == locationChoice) {
+            let parkContainer = document.getElementById("parkContainer");
+            parkContainer.style.display = "block";
+
+            let option = new Option(nationalParksArray[i].LocationName);
+            parkActualList.appendChild(option);
+        }
+
+/*         else (nationalParksArray[i].State != locationChoice) //FIGURE OUT TO MAKE IT DISAPPEAR WHEN NO PARKS AVAILABLE
+        {
+            let parkContainer = document.getElementById("parkContainer");
+            parkContainer.style.display = "none";
+        } */
+    }
+
+}
+//------------------------------------------------//
+function locationOptionDropdownHide();
+{
+    let locationContainer = document.getElementById("locationContainer");
+    if (radioLocationButtonChecked){
+        locationContainer.style.display = "block";
+    }
+}
+
+function locationContainerHide(){
+    let locationContainer = document.getElementById("locationContainer");
+        locationContainer.style.display = "block";
+}
+
+locationContainerHide();
+typeContainerHide();
+
+//---------------------------------------------------------//
+radioLocationBtnCheck();
+radioParkTypeBtnCheck();
+
+function locationContainerHide() { /* HIDES LOCATION LIST */
+    document.getElementById("locationContainer").style.display = "none";
+    let radioLocationBtnCheck = document.getElementById("radioLocationBtn").checked;
+    if (radioLocationBtnCheck){
+        document.getElementById("locationContainer").style.display = "block";
+    }
+}
+
+function typeContainerHide() { /* HIDES PARK TYPE LIST */
+
+   document.getElementById("typeContainer").style.display = "none";
+   let radioParkTypeBtnCheck = document.getElementById("radioParkTypeBtn").checked;
+    if (radioParkTypeBtnCheck){
+        document.getElementById("typeContainer").style.display = "block";
+    }
+    else
+    document.getElementById("typeContainer").style.display = "none";
+}
+
+locationContainerHide();
+typeContainerHide();
+
+function locationContainerHide() { /* HIDES LOCATION LIST */
+    /* document.getElementById("locationContainer").style.display = "none"; */
+}
+
+function typeContainerHide() { /* HIDES PARK TYPE LIST */
+   /* document.getElementById("typeContainer").style.display = "none"; */
+}
+
+    
+function parkActualChange() { /* DISPLAY INFO BASED ON PARK SELECTED */
+    const parkInfoContainer = document.getElementById("parkInfoContainer")
+    parkInfoContainer.innerHTML = "";
+
+    let parkActualListChoice = document.getElementById("parkActualList").value
+
+    for (let i = 0; i < nationalParksArray.length; i++) { /* TESTING TO MAKE SURE IT SHOWS? IT DOES */
+        if (nationalParksArray[i].LocationName == parkActualListChoice) {
+            let p = document.createElement("p");
+            p.innerHTML = "Test " + nationalParksArray[i].LocationName
+            parkInfoContainer.appendChild(p)
+
+        }
+    }               
+}
+
+
+//Something about setting Index to 0 (LOOK IT UP)
