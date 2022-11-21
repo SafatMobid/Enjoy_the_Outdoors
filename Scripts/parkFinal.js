@@ -283,47 +283,47 @@ function parkActualChange() { /* DISPLAY INFO BASED ON PARK SELECTED */
     for (let i = 0; i < nationalParksArray.length; i++) {
         if (nationalParksArray[i].LocationName == parkActualListChoice) {
 
+            let cardSize = document.createElement("div");
+            cardSize.className = "col-lg-10 offset-lg-1 mb-4 mt-4";
+            parkInfoContainer.appendChild(cardSize) 
+        
             let card = document.createElement("div");
-            card.className = "card";
-            parkInfoContainer.appendChild(card)
+            card.className = "card bg-light";
+            cardSize.appendChild(card)  
 
             let cardBody = document.createElement("div");
-            cardBody.className = "card-body bg-light";
-            card.appendChild(cardBody)
-
-            let cardSize = document.createElement("div");
-            cardSize.className = "col-sm-12 col-lg-8 mb-8";
-            cardBody.appendChild(cardSize)
-
+            cardBody.className = "card-body";
+            card.appendChild(cardBody) 
+        
             let title = document.createElement("h1");
             title.className = "card-title";
             title.innerHTML = nationalParksArray[i].LocationName;
             cardBody.appendChild(title)
-
+        
             let title2 = document.createElement("h4");
             title2.className = "card-title";
             title2.innerHTML = "Address"
             cardBody.appendChild(title2)
-
+        
             let textAddress = document.createElement("p");
             textAddress.className = "card-text";
             textAddress.innerHTML = nationalParksArray[i].Address
             cardBody.appendChild(textAddress)
-
+        
             let textCityStateZip = document.createElement("p");
             textCityStateZip.className = "card-text";
             textCityStateZip.innerHTML = nationalParksArray[i].City + ", " + nationalParksArray[i].State + " " + nationalParksArray[i].ZipCode
             cardBody.appendChild(textCityStateZip)
-
+        
             let textPhone = document.createElement("p");
             textPhone.className = "card-text";
             textPhone.innerHTML = "Phone Number: " + nationalParksArray[i].Phone
             cardBody.appendChild(textPhone)
-
+        
             let footer = document.createElement("cardFooter");
             footer.className = "card-footer"
             card.appendChild(footer)
-
+        
             let a = document.createElement("a");
             a.href = nationalParksArray[i].Visit
             a.className = "btn btn-primary"

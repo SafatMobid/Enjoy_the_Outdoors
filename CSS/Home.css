@@ -23,3 +23,14 @@
     color: aliceblue;
     font-size: 150%;
 }
+
+.color
+{
+    color: aliceblue;
+}
+
+.dropdownText
+{
+    font-size: 400%;
+    font-weight: 300;
+}

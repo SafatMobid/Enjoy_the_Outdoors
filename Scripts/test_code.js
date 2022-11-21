@@ -338,3 +338,11 @@ if (nationalParksArray[i].LocationName.indexOf(typeChoice) != -1) {
     let option = new Option(nationalParksArray[i].LocationName);
     parkActualList.appendChild(option);
 }
+
+//------------------------------------------------------------------------------------//
+
+    let img = document.createElement("img");
+    img.src = "images/"+mountainsArray[i].mountain.img;
+    img.alt = mountainsArray[i].mountain.name;
+    img.className = "card-img";
+    card.appendChild(img);

@@ -19,12 +19,15 @@ function  mountainOptionDropdown() {
     const  mountainOptionList = document.getElementById("mountainOptionList");
     let blankMountain = document.createElement("option");
     blankMountain.value = "mountainOption";
-    blankMountain.textContent = "-----Select A Mountain-----"
+    blankMountain.textContent = "Select a Mountain"
+    blankMountain.style.textAlign = "center"
     mountainOptionList.appendChild(blankMountain)
     
 
     for (let i = 0; i < mountainsArray.length; i++) {
         let option = new Option(mountainsArray[i].name)
+
+        option.style.textAlign = "center"
 
         mountainOptionList.appendChild(option);
     }
@@ -71,6 +74,12 @@ function mountainOptionChange() {
             text.className = "card-text";
             text.innerHTML = mountainsArray[i].desc
             cardBody.appendChild(text)
+        
+            let img = document.createElement("img");
+            img.src = "Images/Image_Given/"+ mountainsArray[i].img;
+            img.alt = mountainsArray[i].name;
+            img.className = "card-img";
+            card.appendChild(img);
         
         
             let footer = document.createElement("cardFooter");
