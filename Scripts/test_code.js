@@ -1,4 +1,9 @@
-    /* var output = ""; */
+    //
+   // TEST CODES AND CODES HOLDER
+   //WHERE I PUT CODE THAT I TEST AND HOLD TILL I INCLUDE IT
+   //
+   
+   /* var output = ""; */
     let locationChoice = document.getElementById("locationOptionList").value
     for (let i = 0; i < nationalParksArray.length; i++) 
     {
