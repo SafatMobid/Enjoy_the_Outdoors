@@ -9,7 +9,6 @@
 /* NEEDED TO DISPLAY THE PARKS AS LIST (MAY NOT USE (TEST CARD INSTEAD IF TIME)*/
 //const parkActualList = document.getElementById("parkActualList")
 
-
 window.onload = function () {
 
     parkOptionDropdown();
@@ -131,7 +130,7 @@ function locationOptionChange() { /* LOAD DROPDOWN BASED ON LOCATION */
             matchCount++;
 
             let cardSize = document.createElement("div");
-            cardSize.className = "col-sm-6 col-lg-4 mb-4";
+            cardSize.className = "col-sm-6 col-lg-4 mb-4 mt-4";
             parkInfoContainer.appendChild(cardSize) 
         
             let card = document.createElement("div");
@@ -169,7 +168,7 @@ function locationOptionChange() { /* LOAD DROPDOWN BASED ON LOCATION */
         
             let footer = document.createElement("cardFooter");
             footer.className = "card-footer"
-            cardBody.appendChild(footer)
+            card.appendChild(footer)
         
             let a = document.createElement("a");
             a.href = nationalParksArray[i].Visit
@@ -194,14 +193,13 @@ function locationOptionChange() { /* LOAD DROPDOWN BASED ON LOCATION */
 
 }
 
-
-
-
-
-
 function parkOptionChange() {  /* LOAD DROPDOWN BASED ON PARK TYPE */
+    const parkInfoContainer = document.getElementById("parkInfoContainer")
+    parkInfoContainer.innerHTML = "";
+
     const parkActualList = document.getElementById("parkActualList")
     parkActualList.length = 0;
+    
     let typeChoice = document.getElementById("parkOptionList").value
 
     let blankPark = document.createElement("option");
@@ -214,7 +212,53 @@ function parkOptionChange() {  /* LOAD DROPDOWN BASED ON PARK TYPE */
     for (let i = 0; i < nationalParksArray.length; i++) {
         if (nationalParksArray[i].LocationName.indexOf(typeChoice) != -1) {
             matchCount++;
-            //Can put card here but need to figure out how to reset
+
+            let cardSize = document.createElement("div");
+            cardSize.className = "col-sm-6 col-lg-4 mb-4 mt-4";
+            parkInfoContainer.appendChild(cardSize) 
+        
+            let card = document.createElement("div");
+            card.className = "card bg-light";
+            cardSize.appendChild(card)  
+        
+            let cardBody = document.createElement("div");
+            cardBody.className = "card-body";
+            card.appendChild(cardBody) 
+        
+            let title = document.createElement("h1");
+            title.className = "card-title";
+            title.innerHTML = nationalParksArray[i].LocationName;
+            cardBody.appendChild(title)
+        
+            let title2 = document.createElement("h4");
+            title2.className = "card-title";
+            title2.innerHTML = "Address"
+            cardBody.appendChild(title2)
+        
+            let textAddress = document.createElement("p");
+            textAddress.className = "card-text";
+            textAddress.innerHTML = nationalParksArray[i].Address
+            cardBody.appendChild(textAddress)
+        
+            let textCityStateZip = document.createElement("p");
+            textCityStateZip.className = "card-text";
+            textCityStateZip.innerHTML = nationalParksArray[i].City + ", " + nationalParksArray[i].State + " " + nationalParksArray[i].ZipCode
+            cardBody.appendChild(textCityStateZip)
+        
+            let textPhone = document.createElement("p");
+            textPhone.className = "card-text";
+            textPhone.innerHTML = "Phone Number: " + nationalParksArray[i].Phone
+            cardBody.appendChild(textPhone)
+        
+            let footer = document.createElement("cardFooter");
+            footer.className = "card-footer"
+            card.appendChild(footer)
+        
+            let a = document.createElement("a");
+            a.href = nationalParksArray[i].Visit
+            a.className = "btn btn-primary"
+            a.innerHTML = "Learn More"
+            footer.appendChild(a)
 
             let option = new Option(nationalParksArray[i].LocationName);
             parkActualList.appendChild(option);
