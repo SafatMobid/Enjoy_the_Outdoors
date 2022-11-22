@@ -48,20 +48,20 @@ function mountainOptionChange() {
             mountainInfoContainer.appendChild(cardSize) 
         
             let card = document.createElement("div");
-            card.className = "card bg-light text-center";
-            card.style.height = "400px"
+            card.className = "card text-center background";
+            card.style.height = "400px shadow-8-strong"
             cardSize.appendChild(card)  
             
             /*let cardImg = document.createElement("img")
             card.className = "card-img-top"
-            card.img.src = "" */
+            card.img.src = "" */ /* WAS ORIGINAL TEST */
 
             let cardBody = document.createElement("div");
             cardBody.className = "card-body";
             card.appendChild(cardBody) 
         
             let title = document.createElement("h1");
-            title.className = "card-title";
+            title.className = "card-title"
             title.innerHTML = mountainsArray[i].name;
             cardBody.appendChild(title)
         

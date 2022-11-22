@@ -13,7 +13,6 @@ window.onload = function () {
 
     parkOptionDropdown();
     locationOptionDropdown();
-
     locationContainerHide();
     typeContainerHide();
     parkContainerHide();
@@ -161,21 +160,6 @@ function locationOptionChange() { /* LOAD DROPDOWN BASED ON LOCATION */
             textCityStateZip.innerHTML = nationalParksArray[i].City + ", " + nationalParksArray[i].State + " " + nationalParksArray[i].ZipCode
             cardBody.appendChild(textCityStateZip)
         
-            let textPhone = document.createElement("p");
-            textPhone.className = "card-text";
-            textPhone.innerHTML = "Phone Number: " + nationalParksArray[i].Phone
-            cardBody.appendChild(textPhone)
-        
-            let footer = document.createElement("cardFooter");
-            footer.className = "card-footer"
-            card.appendChild(footer)
-        
-            let a = document.createElement("a");
-            a.href = nationalParksArray[i].Visit
-            a.className = "btn btn-primary"
-            a.innerHTML = "Learn More"
-            footer.appendChild(a)
-        
 
             let option = new Option(nationalParksArray[i].LocationName);
             parkActualList.appendChild(option);            
@@ -193,7 +177,7 @@ function locationOptionChange() { /* LOAD DROPDOWN BASED ON LOCATION */
 
 }
 
-function parkOptionChange() {  /* LOAD DROPDOWN BASED ON PARK TYPE */
+function parkOptionChange() {  /* LOAD DROPDOWN BASED ON PARK TYPE AND LOADS CARDS*/
     const parkInfoContainer = document.getElementById("parkInfoContainer")
     parkInfoContainer.innerHTML = "";
 
@@ -245,20 +229,6 @@ function parkOptionChange() {  /* LOAD DROPDOWN BASED ON PARK TYPE */
             textCityStateZip.innerHTML = nationalParksArray[i].City + ", " + nationalParksArray[i].State + " " + nationalParksArray[i].ZipCode
             cardBody.appendChild(textCityStateZip)
         
-            let textPhone = document.createElement("p");
-            textPhone.className = "card-text";
-            textPhone.innerHTML = "Phone Number: " + nationalParksArray[i].Phone
-            cardBody.appendChild(textPhone)
-        
-            let footer = document.createElement("cardFooter");
-            footer.className = "card-footer"
-            card.appendChild(footer)
-        
-            let a = document.createElement("a");
-            a.href = nationalParksArray[i].Visit
-            a.className = "btn btn-primary"
-            a.innerHTML = "Learn More"
-            footer.appendChild(a)
 
             let option = new Option(nationalParksArray[i].LocationName);
             parkActualList.appendChild(option);
@@ -333,6 +303,7 @@ function parkActualChange() { /* DISPLAY INFO BASED ON PARK SELECTED */
     }
 }
 
+//MATCH COUNT (IF THERE ARE MATCH IT WILL RUN THE FUNCTION IF NOT IT WON'T)
 
 
 
